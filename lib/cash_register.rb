@@ -14,6 +14,15 @@ class CashRegister
     @prices << price 
   end
 
+  def apply_discount
+    remainder = (@discount.to_f / 100)
+    sale_amount = remainder * @total
+    @total -= sale_amount.ceil
+      if @discount > 0
+        return "After the discount, the total comes out to $#{@total}."
+      elsif @discount == 0
+        return "There is no discount to apply.
+      end"
 
 
 
