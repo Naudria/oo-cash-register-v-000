@@ -29,6 +29,14 @@ class CashRegister
       @items
     end
 
+  def void_last_transaction
+    last = @prices.fetch(-1)
+    @prices.pop
+    @total -= last
+  end
+
+end
+
 
 
 
